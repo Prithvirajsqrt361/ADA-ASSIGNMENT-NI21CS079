@@ -8,7 +8,7 @@ public:
     vector<vector<string>> solveNQueens(int n) 
     {
         vector<vector<string>> solutions;
-        vector<string> emptyBoard(n, string(n, '.')); 
+        vector<string> emptyBoard(n, string(n, '*')); 
 
         backtrack(solutions, emptyBoard, 0, n);
         return solutions;
@@ -52,7 +52,7 @@ private:
             {
                 board[row][col] = 'Q';
                 backtrack(solutions, board, row + 1, n);
-                board[row][col] = '.'; 
+                board[row][col] = '*'; 
             }
         }
     }
